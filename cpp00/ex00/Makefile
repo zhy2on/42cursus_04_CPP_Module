@@ -6,14 +6,14 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/21 21:44:50 by jihoh             #+#    #+#              #
-#    Updated: 2022/05/24 20:09:15 by jihoh            ###   ########.fr        #
+#    Updated: 2022/05/27 22:53:31 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 
 NAME = megaphone
