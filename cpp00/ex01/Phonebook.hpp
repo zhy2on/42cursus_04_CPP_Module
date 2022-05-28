@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:03:44 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/28 16:32:40 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/28 22:17:57 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 # include <iomanip>
 # include <string>
 
+# define MaxIndex 8
+
 class Phonebook
 {
 private:
-	Contact	contacts[8];
+	Contact	contacts[MaxIndex];
 	int		cnt;
 public:
 	Phonebook();

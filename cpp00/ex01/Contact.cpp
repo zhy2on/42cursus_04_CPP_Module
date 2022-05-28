@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 20:22:05 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/28 17:17:02 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/28 22:19:34 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Contact::set_contact_info(int index)
 {
-	this->contact_index = index;
+	this->contact_index = index + 1;
 	for (int i = FirstName; i <= DarkestSecret; i++)
 	{
 		std::cout << info_index_name(i) << ": ";
