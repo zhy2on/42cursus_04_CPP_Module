@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:32:24 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/30 20:56:03 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/30 21:06:32 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Zombie::Zombie()
 {
+	this->name = "Foo";
 }
 
 Zombie::Zombie( std::string name )
