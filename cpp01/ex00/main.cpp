@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:24:20 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/30 20:45:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/30 20:57:36 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	main()
 	for (int i = 0; i < 6; i++)
 		zombie.randomChump(name[i]);
 	zombie.announce();
+	// system("leaks zombie");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:31:43 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/30 20:21:17 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/30 20:52:10 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Zombie
 {
 private:
 	std::string	name;
-	std::string	type;
+
 public:
 	Zombie();
 	Zombie( std::string name );
@@ -28,6 +28,5 @@ public:
 	Zombie*	newZombie( std::string name );
 	void	randomChump( std::string name );
 };
-
 
 #endif
