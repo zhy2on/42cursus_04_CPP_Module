@@ -6,14 +6,14 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/21 21:44:50 by jihoh             #+#    #+#              #
-#    Updated: 2022/05/28 16:21:02 by jihoh            ###   ########.fr        #
+#    Updated: 2022/05/30 19:46:01 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp Phonebook.cpp Contact.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = c++
+CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
 
 NAME = phonebook
