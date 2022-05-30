@@ -6,14 +6,14 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:48:37 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/30 21:05:41 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/05/30 21:42:47 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_CLASS_H
 # define ZOMBIE_CLASS_H
 # include <iostream>
-# include <string.h>
+# include <string>
 
 class Zombie
 {
