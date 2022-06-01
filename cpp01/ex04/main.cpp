@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ReplaceStr.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 20:45:23 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/01 17:03:29 by jihoh            ###   ########.fr       */
+/*   Created: 2022/06/01 16:42:36 by jihoh             #+#    #+#             */
+/*   Updated: 2022/06/01 16:47:56 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACESTR_CLASS_H
-# define REPLACESTR_CLASS_H
+#include "ReplaceStr.hpp"
 
-# include <iostream>
-# include <fstream>
-# include <string>
-
-class ReplaceStr
+int	main(int ac, char **av)
 {
-private:
-	std::ifstream	ifs;
-	std::ofstream	ofs;
-	std::string		s1;
-	std::string		s2;
+	ReplaceStr	rs;
 
-public:
-	ReplaceStr();
-	~ReplaceStr();
-	bool	openFile( std::string f );
-	void	replaceStr( std::string f, std::string s1, std::string s2 );
-};
-
-#endif
+	if (ac != 4)
+	{
+		std::cout << "Please input [filename] [s1] [s2]" << std::endl;
+		return (1);
+	}
+	rs.replaceStr(av[1], av[2], av[3]);
+	return (0);
+}
