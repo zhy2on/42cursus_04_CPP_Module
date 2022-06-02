@@ -6,7 +6,7 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/02 18:55:03 by jihoh            ###   ########.fr        #
+#    Updated: 2022/06/02 19:57:26 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.cpp=.o)
 CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
 
-NAME = fixed
+NAME = fixed00
 
 all: $(NAME)
 
