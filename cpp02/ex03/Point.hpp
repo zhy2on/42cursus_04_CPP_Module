@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:06:55 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/03 17:56:01 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/04 19:39:05 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Point
 {
 private:
-	Fixed	x;
-	Fixed	y;
+	Fixed const x;
+	Fixed const y;
 
 public:
 	Point();
@@ -31,11 +31,8 @@ public:
 
 	Fixed	getX( void ) const;
 	Fixed	getY( void ) const;
-
-	void	setX( float x );
-	void	setY( float y );
 };
 
-bool	isInTriangle( Point check, Point v1, Point v2, Point v3 );
+bool	bsp( Point const a, Point const b, Point const c, Point const point );
 
 #endif

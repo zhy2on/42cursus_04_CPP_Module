@@ -6,34 +6,30 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:07:00 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/03 17:56:51 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/04 19:48:26 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
 Point::Point()
+	: x(Fixed(0)), y(Fixed(0))
 {
-	this->x = Fixed(0);
-	this->y = Fixed(0);
 }
 
 Point::Point( const float x, const float y )
+	: x(Fixed(x)), y(Fixed(y))
 {
-	this->x = Fixed(x);
-	this->y = Fixed(y);
 }
 
 Point::Point( const Point &rhs )
+	: x(rhs.x), y(rhs.y)
 {
-	this->x = rhs.x;
-	this->y = rhs.y;
 }
 
 Point	&Point::operator=( const Point &rhs )
 {
-	this->x = rhs.x;
-	this->y = rhs.y;
+	(void) rhs;
 	return (*this);
 }
 
@@ -49,14 +45,4 @@ Fixed	Point::getX( void ) const
 Fixed	Point::getY( void ) const
 {
 	return (this->y);
-}
-
-void	Point::setX( float x )
-{
-	this->x = Fixed(x);
-}
-
-void	Point::setY( float y )
-{
-	this->y = Fixed(y);
 }
