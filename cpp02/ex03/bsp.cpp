@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:19:45 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/04 19:49:59 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/04 19:56:51 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ bool	bsp( Point a, Point b, Point c, Point point )
 	d2 = sign(b, c, point);
 	d3 = sign(c, a, point);
 
-	has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-	has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
+	has_neg = (d1 <= 0) || (d2 <= 0) || (d3 <= 0);
+	has_pos = (d1 >= 0) || (d2 >= 0) || (d3 >= 0);
 
 	return !(has_neg && has_pos);
 }
