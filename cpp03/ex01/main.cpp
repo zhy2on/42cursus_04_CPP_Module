@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 17:34:43 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 15:28:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 16:02:37 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main()
 {
 	{
 		ScavTrap sc4vTP("sc4vTP");
+
 		sc4vTP.attack("Calypso Twins");
 		sc4vTP.takeDamage(60);
 		sc4vTP.beRepaired(4);
@@ -27,6 +28,7 @@ int	main()
 	std::cout << std::endl;
 	{
 		ClapTrap cl4pTP("cl4pTP");
+
 		cl4pTP.attack("Calypso Twins");
 		cl4pTP.takeDamage(6);
 		cl4pTP.beRepaired(4);
