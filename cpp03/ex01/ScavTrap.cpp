@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:45:18 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 15:08:37 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 15:44:36 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,26 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 	this->energy_points = 50;
 	this->attack_damage = 20;
 	std::cout << "Parameter ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &rhs)
+{
+	this->name = rhs.name;
+	this->hit_points = rhs.hit_points;
+	this->energy_points = rhs.hit_points;
+	this->attack_damage = rhs.attack_damage;
+	std::cout << "Copy ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
+{
+	this->name = rhs.name;
+	this->hit_points = rhs.hit_points;
+	this->energy_points = rhs.energy_points;
+	this->attack_damage = rhs.attack_damage;
+
+	std::cout << "ScavTrap assignement operator called" << std::endl;
+	return *this;
 }
 
 ScavTrap::~ScavTrap(void)
