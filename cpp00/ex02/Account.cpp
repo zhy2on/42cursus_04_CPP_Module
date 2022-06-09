@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 14:37:31 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/30 19:58:25 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:12:30 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,6 @@ Account::Account( int initial_deposit )
 	_accountIndex = _nbAccounts++;
 	_amount = initial_deposit;
 	_totalAmount += initial_deposit;
-	_nbDeposits = 0;
-	_nbWithdrawals = 0;
-	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";";
-	std::cout << "amount:" << _amount << ";";
-	std::cout << "created" << std::endl;
-}
-
-Account::Account( void )
-{
-	_accountIndex = _nbAccounts++;
-	_amount = 0;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	_displayTimestamp();
