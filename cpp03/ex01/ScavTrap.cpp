@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:45:18 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 15:44:36 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:24:33 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap(const ScavTrap &rhs)
 {
 	this->name = rhs.name;
 	this->hit_points = rhs.hit_points;
-	this->energy_points = rhs.hit_points;
+	this->energy_points = rhs.energy_points;
 	this->attack_damage = rhs.attack_damage;
 	std::cout << "Copy ScavTrap constructor called" << std::endl;
 }

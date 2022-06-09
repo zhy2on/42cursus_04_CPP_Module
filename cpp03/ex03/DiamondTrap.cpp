@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:10:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 18:45:32 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:25:15 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &rhs)
 {
 	this->name = rhs.name;
 	this->hit_points = rhs.hit_points;
-	this->energy_points = rhs.hit_points;
+	this->energy_points = rhs.energy_points;
 	this->attack_damage = rhs.attack_damage;
 	std::cout << "Copy DiamondTrap constructor called" << std::endl;
 }

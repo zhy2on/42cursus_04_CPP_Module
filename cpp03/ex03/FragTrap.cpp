@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:48:04 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 17:47:15 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:25:28 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap(const FragTrap &rhs)
 {
 	this->name = rhs.name;
 	this->hit_points = rhs.hit_points;
-	this->energy_points = rhs.hit_points;
+	this->energy_points = rhs.energy_points;
 	this->attack_damage = rhs.attack_damage;
 	std::cout << "Copy FragTrap constructor called" << std::endl;
 }
