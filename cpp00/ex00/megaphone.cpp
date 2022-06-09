@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:36:25 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/24 19:39:51 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 13:49:09 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 			*s = std::toupper(*s);
 			s++;
 		}
-		std::cout << *av++ << " ";
+		std::cout << *av++;
 	}
 	std::cout << std::endl;
 	return (0);
