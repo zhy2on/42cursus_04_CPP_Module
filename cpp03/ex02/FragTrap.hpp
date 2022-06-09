@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:48:10 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 16:02:42 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 17:46:18 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 
 public:
 	FragTrap(void);
-	FragTrap(std::string name);
+	FragTrap(const std::string name);
 	FragTrap(const FragTrap &rhs);
 	~FragTrap(void);
 
