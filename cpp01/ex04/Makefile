@@ -6,15 +6,15 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/01 16:46:21 by jihoh            ###   ########.fr        #
+#    Updated: 2022/06/09 18:52:40 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp ReplaceStr.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = c++ -std=c++98
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = replaceStr
 
