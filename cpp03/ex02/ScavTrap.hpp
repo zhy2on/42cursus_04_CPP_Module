@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:45:29 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 15:00:21 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:31:44 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class ScavTrap : public ClapTrap
 {
 private:
+	ScavTrap(void);
 
 public:
-	ScavTrap(void);
 	ScavTrap(const std::string name);
 	ScavTrap(const ScavTrap &rhs);
 	~ScavTrap(void);

@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:48:10 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 17:52:10 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:33:30 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class FragTrap : public virtual ClapTrap
 {
 private:
+	FragTrap(void);
 
 public:
-	FragTrap(void);
 	FragTrap(const std::string name);
 	FragTrap(const FragTrap &rhs);
 	~FragTrap(void);

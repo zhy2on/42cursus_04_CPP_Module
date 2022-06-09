@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:55:36 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 16:58:31 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:32:18 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ protected:
 	int energy_points;
 	int attack_damage;
 
-public:
 	ClapTrap(void);
+
+public:
 	ClapTrap(const std::string name);
 	ClapTrap(const ClapTrap &rhs);
 	~ClapTrap(void);

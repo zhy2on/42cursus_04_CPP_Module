@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:09:20 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 18:41:42 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/09 20:32:36 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class DiamondTrap : public FragTrap, public ScavTrap
 private:
 	std::string name;
 
-public:
 	DiamondTrap(void);
+
+public:
 	DiamondTrap(const std::string name);
 	DiamondTrap(const DiamondTrap &rhs);
 	~DiamondTrap(void);
