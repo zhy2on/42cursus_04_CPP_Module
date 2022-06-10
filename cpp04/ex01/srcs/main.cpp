@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 20:49:31 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/10 20:52:19 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
 		for (int i = 0; i < 6; i++)
 			delete animals[i];
 
-		system("leaks animalBrain");
+		system("leaks animalSound01");
 	}
 	{
 		Dog *dog = new Dog();
@@ -58,7 +58,7 @@ int main()
 		delete copiedDog;
 		delete copiedCat;
 
-		system("leaks animalBrain");
+		system("leaks animalSound01");
 	}
 	return 0;
 }
