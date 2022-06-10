@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:14:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 18:36:04 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/10 19:52:34 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ Cat::Cat(const Cat &rhs)
 {
 	this->type = rhs.type;
 	std::cout << "Cat copy constructor called" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+	this->type = rhs.type;
+	std::cout << "Cat assignment operatior called" << std::endl;
+	return (*this);
 }
 
 Cat::~Cat()
