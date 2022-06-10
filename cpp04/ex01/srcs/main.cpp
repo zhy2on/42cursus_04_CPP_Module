@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 20:19:59 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/10 20:26:07 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,6 @@ int main()
 	{
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
-
-		std::cout << "\033[0;32m";
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); // will output the cat sound!
-		j->makeSound();
-		std::cout << "\033[0m";
 
 		delete j;
 		delete i;
@@ -46,18 +39,24 @@ int main()
 		system("leaks animalBrain");
 	}
 	{
-		Dog dog = Dog();
-		Cat cat = Cat();
-		Dog copiedDog = dog;
-		Cat copiedCat = cat;
+		Dog *dog = new Dog();
+		Cat *cat = new Cat();
+		Dog *copiedDog = new Dog(*dog);
+		Cat *copiedCat = new Cat(*cat);
 
 		std::cout << "\033[0;32m"
 				  << "# Brain memory" << std::endl
-				  << "Dog: " << dog.getBrain() << std::endl
-				  << "Copied dog: " << copiedDog.getBrain() << std::endl
-				  << "Cat: " << cat.getBrain() << std::endl
-				  << "Copied cat: " << copiedCat.getBrain() << std::endl
+				  << "Dog: " << dog->getBrain() << std::endl
+				  << "Copied dog: " << copiedDog->getBrain() << std::endl
+				  << "Cat: " << cat->getBrain() << std::endl
+				  << "Copied cat: " << copiedCat->getBrain() << std::endl
 				  << "\033[0m";
+		delete dog;
+		delete cat;
+		delete copiedDog;
+		delete copiedCat;
+
+		system("leaks animalBrain");
 	}
 	return 0;
 }
