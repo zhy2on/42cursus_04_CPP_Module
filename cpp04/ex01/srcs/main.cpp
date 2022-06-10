@@ -6,13 +6,15 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 20:26:07 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/10 20:49:31 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+
+# define NUM_OF_ANIMALS 6
 
 int main()
 {
@@ -26,11 +28,11 @@ int main()
 		system("leaks animalBrain");
 	}
 	{
-		const Animal *animals[6];
+		const Animal *animals[NUM_OF_ANIMALS];
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < NUM_OF_ANIMALS / 2; i++)
 			animals[i] = new Dog();
-		for (int i = 3; i < 6; i++)
+		for (int i = NUM_OF_ANIMALS / 2; i < NUM_OF_ANIMALS; i++)
 			animals[i] = new Cat();
 
 		for (int i = 0; i < 6; i++)
