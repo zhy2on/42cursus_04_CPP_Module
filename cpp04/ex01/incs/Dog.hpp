@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:26:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 20:16:42 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/11 16:51:50 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ public:
 	Dog &operator=(const Dog &rhs);
 
 	void makeSound(void) const;
-	const Brain *getBrain(void) const;
+	Brain *getBrain(void) const;
+	const std::string &getBrainIdea(int idx) const;
+	void setBrainIdea(int idx, std::string idea);
 };
 
 #endif

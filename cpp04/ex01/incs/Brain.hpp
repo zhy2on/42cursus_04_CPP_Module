@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:32:14 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 18:58:54 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/11 16:43:30 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ public:
 	~Brain(void);
 
 	Brain &operator=(const Brain &rhs);
+
+	const std::string &getIdea(int idx) const;
+	void setIdea(int idx, std::string idea);
 };
 
 #endif

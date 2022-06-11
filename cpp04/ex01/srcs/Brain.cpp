@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 21:05:23 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 19:01:28 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/11 16:48:28 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,14 @@ Brain &Brain::operator=(const Brain &rhs)
 Brain::~Brain(void)
 {
 	std::cout << "Brain default destructor called" << std::endl;
+}
+
+const std::string &Brain::getIdea(int idx) const
+{
+	return (this->ideas[idx]);
+}
+
+void Brain::setIdea(int idx, std::string idea)
+{
+	this->ideas[idx] = idea;
 }
