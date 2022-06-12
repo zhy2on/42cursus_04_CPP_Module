@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:14:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/11 16:53:19 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/12 16:52:20 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,24 @@ Cat::Cat(void)
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &rhs)
+Cat::Cat(const Cat &rhs) : Animal(rhs)
 {
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
+	*(this->brain) = *(rhs.getBrain());
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &rhs)
 {
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
+	Animal::operator=(rhs);
+	*(this->brain) = *(rhs.getBrain());
+	std::cout << "Cat assignment operatior called" << std::endl;
+	return (*this);
+}
+
+Animal &Cat::operator=(const Animal &rhs)
+{
+	Animal::operator=(rhs);
+	*(this->brain) = *(rhs.getBrain());
 	std::cout << "Cat assignment operatior called" << std::endl;
 	return (*this);
 }

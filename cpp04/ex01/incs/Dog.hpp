@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:26:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/11 16:51:50 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/12 16:41:32 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define DOG_CLASS_H
 
 # include "Animal.hpp"
-# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -27,6 +26,7 @@ public:
 	~Dog(void);
 
 	Dog &operator=(const Dog &rhs);
+	Animal &operator=(const Animal &rhs);
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;

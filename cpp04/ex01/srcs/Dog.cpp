@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:28:50 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/11 16:53:13 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/12 16:52:48 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,24 @@ Dog::Dog(void)
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &rhs)
+Dog::Dog(const Dog &rhs) : Animal(rhs)
 {
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
+	*(this->brain) = *(rhs.getBrain());
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &rhs)
 {
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
+	Animal::operator=(rhs);
+	*(this->brain) = *(rhs.getBrain());
+	std::cout << "Dog assignment operatior called" << std::endl;
+	return (*this);
+}
+
+Animal &Dog::operator=(const Animal &rhs)
+{
+	Animal::operator=(rhs);
+	*(this->brain) = *(rhs.getBrain());
 	std::cout << "Dog assignment operatior called" << std::endl;
 	return (*this);
 }
