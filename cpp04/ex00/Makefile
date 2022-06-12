@@ -6,7 +6,7 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/10 20:45:17 by jihoh            ###   ########.fr        #
+#    Updated: 2022/06/12 17:35:38 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 INCFLAGS = -I$(INC_DIR)
 
-NAME = animalSound00
+NAME = animal00
 
 SRC_DIR = srcs/
 OBJ_DIR = objs/

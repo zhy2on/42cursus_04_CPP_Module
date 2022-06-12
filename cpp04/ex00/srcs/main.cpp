@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 20:51:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/12 17:37:40 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int main()
 	catWrong->makeSound();
 	metaWrong->makeSound();
 	std::cout << "\033[0m";
-	// system("leaks animalSound00");
+	// system("leaks animal00");
 	return 0;
 }
