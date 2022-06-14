@@ -6,11 +6,11 @@
 #    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/12 17:35:38 by jihoh            ###   ########.fr        #
+#    Updated: 2022/06/14 19:42:37 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp Bureaucrat.cpp
 SRCS := $(addprefix $(SRC_DIR), $(SRCS))
 OBJS =  $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
@@ -18,7 +18,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 INCFLAGS = -I$(INC_DIR)
 
-NAME = animal00
+NAME = bureaucrat
 
 SRC_DIR = srcs/
 OBJ_DIR = objs/

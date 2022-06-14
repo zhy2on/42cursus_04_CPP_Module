@@ -3,24 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 18:16:47 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 19:52:47 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void)
-	: name(""), grade(1)
+	: name(""), grade(Bureaucrat::highestGrade)
+{
+
+}
+
+Bureaucrat::Bureaucrat(const std::string name, const int grade)
+	: name(name), grade(grade)
 {
 
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 {
-	this->name = rhs.name;
 	this->grade = rhs.grade;
 }
 
@@ -30,7 +35,6 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-	this->name = rhs.name;
 	this->grade = rhs.grade;
 	return *this;
 }
@@ -43,6 +47,26 @@ const std::string &Bureaucrat::getName(void) const
 const int &Bureaucrat::getGrade(void) const
 {
 	return (this->grade);
+}
+
+void Bureaucrat::incrementGrade(const int n)
+{
+	this->grade -= n;
+	checkGrade();
+}
+
+void Bureaucrat::decrementGrade(const int n)
+{
+	this->grade += n;
+	checkGrade();
+}
+
+void Bureaucrat::checkGrade(void)
+{
+	if (this->grade < Bureaucrat::highestGrade)
+		throw Bureaucrat::GradeTooHighException();
+	else if (this->grade > Bureaucrat::lowestGrade)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 std::ostream &operator<< (std::ostream &os, const Bureaucrat &rhs)
