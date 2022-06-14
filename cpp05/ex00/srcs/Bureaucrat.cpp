@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 20:43:19 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:48:18 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
 	this->grade = rhs.grade;
+	std::cout << "Warning: name can not be copied. Only grade is copied." << std::endl;
 	return *this;
 }
 
