@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:09:25 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/13 20:02:22 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:04:32 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main()
 		delete me;
 		delete src;
 
-		// system("leaks materia");
+		system("leaks materia");
 	}
 	return 0;
 }

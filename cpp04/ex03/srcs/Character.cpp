@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:46:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/13 19:53:56 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:03:49 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Character::Character(const Character &rhs)
 
 Character::~Character()
 {
-	for (int i = 0; i < this->n_of_equip; i++)
+	for (int i = 0; i < Character::inventory_size; i++)
 		delete this->inventory[i];
 	// std::cout << "Character destructor called" << std::endl;
 }
@@ -72,7 +72,16 @@ std::string const &Character::getName() const
 void Character::equip(AMateria *m)
 {
 	if (this->n_of_equip < Character::inventory_size)
-		this->inventory[this->n_of_equip++] = m;
+	{
+		for (int i = 0; i < Character::inventory_size; i++)
+		{
+			if (!this->inventory[i])
+			{
+				this->inventory[i] = m;
+				break ;
+			}
+		}
+	}
 }
 
 void Character::unequip(int idx)

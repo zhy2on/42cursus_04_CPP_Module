@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:37:09 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/13 19:49:04 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:01:17 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ AMateria *Cure::clone() const
 void Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName()
-			  << "’s wounds *" << std::endl;
+			  << "'s wounds *" << std::endl;
 }

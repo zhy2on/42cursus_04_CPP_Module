@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:13:48 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/13 19:46:35 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:01:39 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ MateriaSource::MateriaSource(const MateriaSource &rhs)
 
 MateriaSource::~MateriaSource(void)
 {
-	for (int i = 0; i < this->n_of_learned; i++)
+	for (int i = 0; i < MateriaSource::materias_size; i++)
 		delete this->materias[i];
 	// std::cout << "MateriaSource default destructor called" << std::endl;
 }
