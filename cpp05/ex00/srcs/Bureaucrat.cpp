@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 19:52:47 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:23:41 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void Bureaucrat::decrementGrade(const int n)
 	checkGrade();
 }
 
-void Bureaucrat::checkGrade(void)
+void Bureaucrat::checkGrade(void) const
 {
 	if (this->grade < Bureaucrat::highestGrade)
 		throw Bureaucrat::GradeTooHighException();

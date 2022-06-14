@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:01:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 19:52:41 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:04:34 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ private:
 
 	static const int lowestGrade = 150;
 	static const int highestGrade = 1;
+
+	Bureaucrat(void);
+	void checkGrade(void) const;
 	
 public:
-	Bureaucrat(void);
 	Bureaucrat(const std::string name, const int grade);
 	Bureaucrat(const Bureaucrat &rhs);
 	~Bureaucrat(void);
@@ -38,7 +40,6 @@ public:
 
 	void incrementGrade(const int n);
 	void decrementGrade(const int n);
-	void checkGrade(void);
 
 	class GradeTooHighException : public std::exception
 	{
