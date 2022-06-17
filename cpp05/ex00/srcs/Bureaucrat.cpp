@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 20:48:18 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/17 18:16:15 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 Bureaucrat::Bureaucrat(void)
 	: name(""), grade(Bureaucrat::highestGrade)
 {
-
+	checkGrade();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, const int grade)
 	: name(name), grade(grade)
 {
-
+	checkGrade();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 	: name(rhs.name), grade(rhs.grade)
 {
+	checkGrade();
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -37,6 +38,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
 	this->grade = rhs.grade;
 	std::cout << "Warning: name can not be copied. Only grade is copied." << std::endl;
+	checkGrade();
 	return *this;
 }
 

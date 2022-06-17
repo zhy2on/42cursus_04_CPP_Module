@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 20:50:38 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/17 18:18:16 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 int main()
 {
-	try {
+	try
+	{
+		Bureaucrat jihoh = Bureaucrat("jihoh", 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << std::endl;
+	try
+	{
 		Bureaucrat jihoh = Bureaucrat("jihoh", 10);
 		std::cout << jihoh << std::endl;
 		jihoh.incrementGrade(9);
@@ -23,11 +33,14 @@ int main()
 		std::cout << jihoh << std::endl;
 		jihoh.decrementGrade(100);
 		std::cout << jihoh << std::endl;
-	} catch (std::exception &e){
-		std::cout << e.what() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	std::cout << std::endl;
-	try {
+	try
+	{
 		Bureaucrat jihoh = Bureaucrat("jihoh", 150);
 		Bureaucrat jihoh2 = Bureaucrat(jihoh);
 		jihoh = jihoh2;
@@ -38,7 +51,9 @@ int main()
 		std::cout << jihoh2 << std::endl;
 		jihoh2.incrementGrade(100);
 		std::cout << jihoh2 << std::endl;
-	} catch (std::exception &e){
+	}
+	catch (std::exception &e)
+	{
 		std::cout << e.what() << std::endl;
 	}
 	system("leaks bureaucrat");
