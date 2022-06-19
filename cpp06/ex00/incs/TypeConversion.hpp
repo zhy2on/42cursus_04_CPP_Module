@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:08:31 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/20 02:36:09 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/20 03:11:01 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ private:
 	bool setSpecialLiteralType(const char *literal);
 	void setLiteralType(const char *literal);
 
-public:
 	TypeConversion(void);
+
+public:
 	TypeConversion(const char *literal);
 	TypeConversion(const TypeConversion &rhs);
 	~TypeConversion(void);
