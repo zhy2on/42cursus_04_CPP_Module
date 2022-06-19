@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:22:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/20 02:45:06 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/20 03:09:38 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void TypeConversion::checkValidInput(const char *literal)
 
 	if (!isdigit(literal[0]) && !literal[1])
 		return ;
-	for (i = 0; literal[i]; i++)
+	for (i = 0; literal[i + 1]; i++)
 	{
 		if (literal[i] == '.')
 			dotCnt++;
@@ -54,7 +54,9 @@ void TypeConversion::checkValidInput(const char *literal)
 		if (dotCnt > 1)
 			throw TypeConversion::InvalidInputException();
 	}
-	if (!isdigit(literal[i - 1]) && literal[i - 1] != 'f' && literal[i - 1] != '.')
+	if (dotCnt > 0 && literal[i] == '.')
+		throw TypeConversion::InvalidInputException();
+	if (!isdigit(literal[i]) && literal[i] != 'f' && literal[i] != '.')
 		throw TypeConversion::InvalidInputException();
 }
 
