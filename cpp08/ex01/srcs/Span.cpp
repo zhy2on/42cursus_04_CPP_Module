@@ -6,21 +6,22 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:18:56 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 17:39:06 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:56:38 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 Span::Span(void)
+	: storageSize(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Span::Span(unsigned int storageSize)
 	: storageSize(storageSize)
 {
-	std::cout << "Parameter constructor called" << std::endl;
+	// std::cout << "Parameter constructor called" << std::endl;
 }
 
 Span::Span(const Span &rhs)
@@ -31,11 +32,12 @@ Span::Span(const Span &rhs)
 
 	for (it = tmp.begin(); it != tmp.end(); ++it)
 		addNumber(*it);
+	// std::cout << "Copy constructor called" << std::endl;
 }
 
 Span::~Span(void)
 {
-	std::cout << "Default destructaor called" << std::endl;
+	// std::cout << "Default destructaor called" << std::endl;
 }
 
 Span &Span::operator=(const Span &rhs)
@@ -47,6 +49,7 @@ Span &Span::operator=(const Span &rhs)
 	for (it = tmp.begin(); it != tmp.end(); ++it)
 		addNumber(*it);
 	return *this;
+	// std::cout << "Assignment operator called" << std::endl;
 }
 
 int Span::size(void) const
@@ -91,4 +94,13 @@ int Span::shortestSpan(void) const
 const std::vector<int> &Span::getStorage(void) const
 {
 	return this->storage;
+}
+
+void Span::randomFill(void)
+{
+	unsigned int leftSpace = this->storageSize - this->size();
+
+	srand(time(NULL));
+	for (unsigned int i = 0; i < leftSpace; i++)
+		addNumber(rand() % 1000);
 }

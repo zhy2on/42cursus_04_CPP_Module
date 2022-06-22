@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:07:34 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 17:30:08 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:47:22 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	int longestSpan(void) const;
 	int shortestSpan(void) const;
 	const std::vector<int> &getStorage(void) const;
+	void randomFill(void);
 };
 
 #endif
