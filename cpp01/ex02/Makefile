@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/09 18:52:24 by jihoh            ###   ########.fr        #
+#    Updated: 2022/06/22 16:55:33 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = hi_brain
+NAME = hiBrain
 
 all: $(NAME)
 
