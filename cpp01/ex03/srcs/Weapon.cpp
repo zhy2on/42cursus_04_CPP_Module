@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:33:05 by jihoh             #+#    #+#             */
-/*   Updated: 2022/05/31 20:17:52 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 19:26:29 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Weapon::Weapon( std::string type )
 	this->type = type;
 }
 
-std::string	Weapon::getType( void ) const
+const std::string	&Weapon::getType( void ) const
 {
 	return (this->type);
 }
