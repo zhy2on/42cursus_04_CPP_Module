@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/02 20:42:54 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 19:47:39 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::Fixed( const float value )
 Fixed::Fixed( const Fixed &fixed )
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixed_point_value = fixed.fixed_point_value;
+	*this = fixed;
 }
 
 Fixed::~Fixed()
