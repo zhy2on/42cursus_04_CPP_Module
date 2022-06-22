@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 19:47:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 19:50:39 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=(const Fixed &fixed)
+Fixed &Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->fixed_point_value = fixed.fixed_point_value;
 	return *this;
 }
 
-int	Fixed::getRawBits( void ) const
+const int &Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point_value);
