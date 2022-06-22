@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:13:42 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/01 19:22:46 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:04:58 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cout << "Please use ./karenFilter [ level ]" << std::endl;
+		std::cout << "Please use ./harlFilter [ level ]" << std::endl;
 		return (1);
 	}
 	harl.complainFilter(av[1]);
