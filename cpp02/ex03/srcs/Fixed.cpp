@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/03 17:47:53 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 19:59:48 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ Fixed	&Fixed::operator=(const Fixed &fixed)
 	return (*this);
 }
 
-int	Fixed::getRawBits( void ) const
+const int &Fixed::getRawBits( void ) const
 {
 	return (this->fixed_point_value);
 }
 
-void	Fixed::setRawBits( int const raw )
+void	Fixed::setRawBits( int raw )
 {
 	this->fixed_point_value = raw;
 }

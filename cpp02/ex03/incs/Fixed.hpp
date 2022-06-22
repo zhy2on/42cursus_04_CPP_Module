@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:24 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/03 15:48:36 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/22 19:59:36 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ public:
 
 	Fixed	&operator=( const Fixed &fixed );
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	const int &getRawBits( void ) const;
+	void	setRawBits( int raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
 
