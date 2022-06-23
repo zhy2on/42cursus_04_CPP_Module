@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 19:59:48 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 13:54:27 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ Fixed	&Fixed::operator=(const Fixed &fixed)
 	return (*this);
 }
 
-const int &Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
 	return (this->fixed_point_value);
 }
 
-void	Fixed::setRawBits( int raw )
+void	Fixed::setRawBits( int const raw )
 {
 	this->fixed_point_value = raw;
 }
