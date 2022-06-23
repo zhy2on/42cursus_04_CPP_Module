@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 19:54:43 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 13:46:32 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,19 @@ Fixed	&Fixed::operator=(const Fixed &fixed)
 	return (*this);
 }
 
-const int &Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point_value);
 }
 
-void	Fixed::setRawBits( int const raw )
+void Fixed::setRawBits( int const raw )
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixed_point_value = raw;
 }
 
-float	Fixed::toFloat( void ) const
+float Fixed::toFloat( void ) const
 {
 	int	power = 1;
 
@@ -73,7 +73,7 @@ float	Fixed::toFloat( void ) const
 	return ((float)this->fixed_point_value / power);
 }
 
-int		Fixed::toInt( void ) const
+int Fixed::toInt( void ) const
 {
 	return (this->fixed_point_value >> this->nb_of_fractional_bits);
 }
