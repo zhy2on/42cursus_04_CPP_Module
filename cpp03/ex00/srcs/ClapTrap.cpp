@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:56:13 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/09 15:41:44 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 17:26:15 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 	this->energy_points = rhs.energy_points;
 	this->attack_damage = rhs.attack_damage;
 
-	std::cout << "Assignement operator called" << std::endl;
+	std::cout << "Copy assignement operator called" << std::endl;
 	return *this;
 }
 
