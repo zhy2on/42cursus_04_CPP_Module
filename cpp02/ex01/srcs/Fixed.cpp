@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 19:50:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 13:42:57 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ Fixed::Fixed()
 	this->fixed_point_value = 0;
 }
 
-Fixed::Fixed( const int value )
+Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->fixed_point_value = value << this->nb_of_fractional_bits;
 }
 
-Fixed::Fixed( const float value )
+Fixed::Fixed(const float value)
 {
 	int	power = 1;
 
@@ -34,7 +34,7 @@ Fixed::Fixed( const float value )
 	this->fixed_point_value = roundf(value * power);
 }
 
-Fixed::Fixed( const Fixed &fixed )
+Fixed::Fixed(const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
@@ -52,19 +52,19 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 	return *this;
 }
 
-const int &Fixed::getRawBits( void ) const
+int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point_value);
 }
 
-void	Fixed::setRawBits( int const raw )
+void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixed_point_value = raw;
 }
 
-float	Fixed::toFloat( void ) const
+float Fixed::toFloat(void) const
 {
 	int	power = 1;
 
@@ -73,12 +73,12 @@ float	Fixed::toFloat( void ) const
 	return ((float)this->fixed_point_value / power);
 }
 
-int		Fixed::toInt( void ) const
+int Fixed::toInt(void) const
 {
 	return (this->fixed_point_value >> this->nb_of_fractional_bits);
 }
 
-std::ostream& operator<<( std::ostream &os, const Fixed &fixed )
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 	return (os);
