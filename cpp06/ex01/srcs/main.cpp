@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 23:43:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/21 15:15:17 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 16:58:41 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.hpp"
-#include <cstdint>
 #include <iostream>
 
 uintptr_t serialize(Data *ptr)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:53:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/21 17:11:59 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/23 17:00:47 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,18 @@ Base *generate(void)
 
 void identify(Base *p)
 {
-	A *a = dynamic_cast<A *>(p);
-	if (a)
+	if (A *a = dynamic_cast<A *>(p))
 	{
 		std::cout << "A" << std::endl;
-		return ;
 	}
-	B *b = dynamic_cast<B *>(p);
-	if (b)
+	else if (B *b = dynamic_cast<B *>(p))
 	{
 		std::cout << "B" << std::endl;
-		return ;
 	}
-	C *c = dynamic_cast<C *>(p);
-	if (c)
+	else if (C *c = dynamic_cast<C *>(p))
 	{
 		std::cout << "C" << std::endl;
-		return ;
 	}
-	
 }
 
 void identify(Base &p)
