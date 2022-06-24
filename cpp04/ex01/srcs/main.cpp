@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:09:30 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:14:49 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int main()
 		Dog d1;
 		Dog d2 = d1;
 		Dog d3;
+//		d3 = d1;
 		d1.getBrain()->setIdea(0, "idea 99");
+		d3 = d1;
 
 		std::cout << std::endl;
 		for (int index = 0; index < 100; index++)
@@ -72,6 +74,9 @@ int main()
 		std::cout << std::endl << std::endl;
 		for (int index = 0; index < 100; index++)
 			std::cout << d2.getBrain()->getIdea(index) << " ";
+		std::cout << std::endl << std::endl;
+		for (int index = 0; index < 100; index++)
+			std::cout << d3.getBrain()->getIdea(index) << " ";
 		std::cout << std::endl << std::endl;
 		system("leaks animal01");
 	}
