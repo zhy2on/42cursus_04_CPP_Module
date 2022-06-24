@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:32:14 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 17:50:04 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 17:26:21 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ protected:
 public:
 	Animal(void);
 	Animal(const Animal &rhs);
-	~Animal(void);
+	virtual ~Animal(void);
 
 	Animal &operator=(const Animal &rhs);
 

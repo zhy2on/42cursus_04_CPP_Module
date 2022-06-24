@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:46:23 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 17:25:54 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ int main()
 	std::cout << catWrong->getType() << std::endl;
 	catWrong->makeSound();
 	metaWrong->makeSound();
-	// system("leaks animal00");
+
+	delete meta;
+	delete j;
+	delete i;
+	delete metaWrong;
+	delete catWrong;
+
+	system("leaks animal00");
 	return 0;
 }
