@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:26:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:36:29 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 15:14:09 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~Dog(void);
 
 	Dog &operator=(const Dog &rhs);
+	Animal &operator=(const Animal &rhs);
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;

@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:37:36 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 15:17:54 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int main()
 
 		delete j;
 		delete i;
-
-		system("leaks animal01");
 	}
 	{
+		std::cout << "###---Test with Base class pointer---###" << std::endl << std::endl;
+
 		Animal *animals[NUM_OF_ANIMALS];
 
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
@@ -58,27 +58,30 @@ int main()
 		
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
 			delete animals[i];
-		system("leaks animal01");
-
-		std::cout << "-----------Deep copy Test-----------" << std::endl;
-		Dog d1;
-		Dog d2 = d1;
-		Dog d3;
-
-		d1.getBrain()->setIdea(0, "idea 99");
-		d3 = d1;
-
-		std::cout << std::endl;
-		for (int index = 0; index < 100; index++)
-			std::cout << d1.getBrain()->getIdea(index) << " ";
-		std::cout << std::endl << std::endl;
-		for (int index = 0; index < 100; index++)
-			std::cout << d2.getBrain()->getIdea(index) << " ";
-		std::cout << std::endl << std::endl;
-		for (int index = 0; index < 100; index++)
-			std::cout << d3.getBrain()->getIdea(index) << " ";
-		std::cout << std::endl << std::endl;
-		system("leaks animal01");
 	}
+	{
+		std::cout << "###---Test with Derived class object---###" << std::endl << std::endl;
+
+		Dog d1;
+		Cat c1;
+
+		d1.setBrainIdea(99, "Wanna go outside!");
+		c1.setBrainIdea(0, "Wanna go home");
+		Dog d2 = d1;
+		Cat c2 = c1;
+
+		std::cout << "# Brain memory" << std::endl
+				  << "Dog: " << d1.getBrain() << std::endl
+				  << "Copied dog: " << d2.getBrain() << std::endl
+				  << "Cat: " << c1.getBrain() << std::endl
+				  << "Copied cat: " << c2.getBrain() << std::endl;
+
+		std::cout << "# Ideas" << std::endl
+				  << "Dog: " << d1.getBrainIdea(99) << std::endl
+				  << "Copied dog: " << d1.getBrainIdea(99) << std::endl
+				  << "Cat: " << c1.getBrainIdea(0) << std::endl
+				  << "Copied cat: " << c2.getBrainIdea(0) << std::endl;
+	}
+	system("leaks animal01");
 	return 0;
 }
