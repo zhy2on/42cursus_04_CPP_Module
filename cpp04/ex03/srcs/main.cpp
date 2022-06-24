@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:09:25 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 16:51:07 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:53:15 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int main()
 			me->equip(tmp);
 		}
 		tmp = src->createMateria("cure");
+		me->equip(tmp);
 		me->equip(tmp);
 
 		ICharacter *bob = new Character("bob");

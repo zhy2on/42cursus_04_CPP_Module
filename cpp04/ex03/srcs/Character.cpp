@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:46:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 16:51:16 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:52:33 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,14 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+	for (int i = 0; i < Character::inventory_size; i++)
+	{
+		if (m == this->inventory[i])
+		{
+			std::cout << "This materia is already exist" << std::endl;
+			return ;
+		}
+	}
 	if (m && (this->n_of_equip < Character::inventory_size))
 	{
 		for (int i = 0; i < Character::inventory_size; i++)
