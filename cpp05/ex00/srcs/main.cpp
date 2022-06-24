@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:18:16 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 17:16:29 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ int main()
 	try
 	{
 		Bureaucrat jihoh = Bureaucrat("jihoh", 150);
-		Bureaucrat jihoh2 = Bureaucrat(jihoh);
-		jihoh = jihoh2;
-		std::cout << jihoh2 << std::endl;
-		jihoh2.incrementGrade(100);
-		std::cout << jihoh2 << std::endl;
-		jihoh2.incrementGrade(100);
-		std::cout << jihoh2 << std::endl;
-		jihoh2.incrementGrade(100);
-		std::cout << jihoh2 << std::endl;
+		Bureaucrat test = Bureaucrat("test", 10);
+		test = jihoh;
+		std::cout << test << std::endl;
+		test.incrementGrade(100);
+		std::cout << test << std::endl;
+		test.incrementGrade(100);
+		std::cout << test << std::endl;
+		test.incrementGrade(100);
+		std::cout << test << std::endl;
 	}
 	catch (std::exception &e)
 	{
