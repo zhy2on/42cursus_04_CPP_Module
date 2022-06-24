@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:11:46 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/12 16:40:15 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:36:26 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
 	~Cat();
 
 	Cat &operator=(const Cat &rhs);
-	Animal &operator=(const Animal &rhs);
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;
