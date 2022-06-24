@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:28:50 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:38:51 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 15:14:06 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ Dog::Dog(const Dog &rhs) : Animal(rhs)
 }
 
 Dog &Dog::operator=(const Dog &rhs)
+{
+	if (this != &rhs)
+	{
+		Animal::operator=(rhs);
+		if (this->brain)
+			delete this->brain;
+		this->brain = new Brain(*rhs.getBrain());
+		std::cout << "Dog assignment operatior called" << std::endl;
+	}
+	return (*this);
+}
+
+Animal &Dog::operator=(const Animal &rhs)
 {
 	if (this != &rhs)
 	{
