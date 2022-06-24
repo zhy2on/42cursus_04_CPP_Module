@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:14:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 14:23:10 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:38:45 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ Cat::Cat(const Cat &rhs) : Animal(rhs)
 }
 
 Cat &Cat::operator=(const Cat &rhs)
-{
-	if (this != &rhs)
-	{
-		Animal::operator=(rhs);
-		if (this->brain)
-			delete this->brain;
-		this->brain = new Brain(*rhs.getBrain());
-		std::cout << "Cat assignment operatior called" << std::endl;
-	}
-	return (*this);
-}
-
-Animal &Cat::operator=(const Animal &rhs)
 {
 	if (this != &rhs)
 	{
