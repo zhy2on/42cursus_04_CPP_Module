@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:46:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 15:42:36 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 16:51:16 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,22 @@ Character::Character(const Character &rhs)
 	this->n_of_equip = rhs.n_of_equip;
 
 	for (int i = 0; i < Character::inventory_size; i++)
-		this->inventory[i] = rhs.inventory[i];
+	{
+		if (rhs.inventory[i])
+			this->inventory[i] = (rhs.inventory[i])->clone();
+		else
+			this->inventory[i] = NULL;
+	}
 	// std::cout << "Character copy constructor called" << std::endl;
 }
 
 Character::~Character()
 {
 	for (int i = 0; i < Character::inventory_size; i++)
-		delete this->inventory[i];
+	{
+		if (this->inventory[i])
+			delete this->inventory[i];
+	}
 	// std::cout << "Character destructor called" << std::endl;
 }
 
@@ -56,7 +64,10 @@ Character &Character::operator=(const Character &rhs)
 		{
 			if (this->inventory[i])
 				delete this->inventory[i];
-			this->inventory[i] = rhs.inventory[i];
+			if (rhs.inventory[i])
+				this->inventory[i] = (rhs.inventory[i])->clone();
+			else
+				this->inventory[i] = NULL;
 		}
 	}
 	// std::cout << "Character assignment operator called" << std::endl;
@@ -70,7 +81,7 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-	if (this->n_of_equip < Character::inventory_size)
+	if (m && (this->n_of_equip < Character::inventory_size))
 	{
 		for (int i = 0; i < Character::inventory_size; i++)
 		{
@@ -87,7 +98,10 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
 	if (idx < 0 || idx >= Character::inventory_size || !this->inventory[idx])
+	{
+		std::cout << "Can't unequip this materia." << std::endl;
 		return ;
+	}
 	this->inventory[idx] = NULL;
 	this->n_of_equip--;
 }
@@ -97,7 +111,10 @@ void Character::use(int idx, ICharacter &target)
 	AMateria *tmp;
 
 	if (idx >= Character::inventory_size || idx < 0 || !this->inventory[idx])
+	{
+		std::cout << "Can't use materia." << std::endl;
 		return ;
+	}
 	this->inventory[idx]->use(target);
 	tmp = this->inventory[idx];
 	this->unequip(idx);

@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:09:25 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 15:55:44 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 16:51:07 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 int main()
 {
 	{
+		std::cout << "###--- Test1 ---###" << std::endl;
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
@@ -39,9 +40,10 @@ int main()
 		delete me;
 		delete src;
 
-		system("leaks materia");
+		std::cout << std::endl;
 	}
 	{
+		std::cout << "###--- Test2 ---###" << std::endl;
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
@@ -64,12 +66,42 @@ int main()
 		me->equip(tmp);
 		me->use(3, *bob);
 
+		tmp = src->createMateria("anyting");
+		me->equip(tmp);
+		me->use(3, *bob);
 
 		delete bob;
 		delete me;
 		delete src;
 
-		system("leaks materia");
+		std::cout << std::endl;
 	}
+	{
+		std::cout << "###--- Deep copy test ---###" << std::endl;
+
+		Character jihoh("Jihoh");
+		IMateriaSource *src = new MateriaSource();
+		AMateria *tmp;
+
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+
+		tmp = src->createMateria("ice");
+		jihoh.equip(tmp);
+		tmp = src->createMateria("cure");
+		jihoh.equip(tmp);
+
+		Character bob(jihoh);
+		bob.use(0, jihoh);
+		bob.use(1, jihoh);
+
+		jihoh.use(0, bob);
+		jihoh.use(1, bob);
+
+		delete src;
+
+		std::cout << std::endl;
+	}
+	system("leaks materia");
 	return 0;
 }
