@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 15:17:54 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 17:04:43 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main()
 		delete i;
 	}
 	{
-		std::cout << "###---Test with Base class pointer---###" << std::endl << std::endl;
+		std::cout << "########################################" << std::endl;
+		std::cout << "###---Test with Base class pointer---###" << std::endl;
+		std::cout << "########################################" << std::endl;
 
 		Animal *animals[NUM_OF_ANIMALS];
 
@@ -58,9 +60,12 @@ int main()
 		
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
 			delete animals[i];
+		std::cout << std::endl;
 	}
 	{
-		std::cout << "###---Test with Derived class object---###" << std::endl << std::endl;
+		std::cout << "##########################################" << std::endl;
+		std::cout << "###---Test with Derived class object---###" << std::endl;
+		std::cout << "##########################################" << std::endl;
 
 		Dog d1;
 		Cat c1;
@@ -81,6 +86,7 @@ int main()
 				  << "Copied dog: " << d1.getBrainIdea(99) << std::endl
 				  << "Cat: " << c1.getBrainIdea(0) << std::endl
 				  << "Copied cat: " << c2.getBrainIdea(0) << std::endl;
+		std::cout << std::endl;
 	}
 	system("leaks animal01");
 	return 0;
