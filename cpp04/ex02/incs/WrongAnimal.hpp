@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:52:34 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/10 17:52:12 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:48:39 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ protected:
 public:
 	WrongAnimal(void);
 	WrongAnimal(const WrongAnimal &rhs);
-	~WrongAnimal(void);
+	virtual ~WrongAnimal(void);
 
 	WrongAnimal &operator=(const WrongAnimal &rhs);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:32:14 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/12 17:39:06 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:48:12 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Animal(const Animal &rhs);
 	virtual ~Animal(void);
 
-	virtual Animal &operator=(const Animal &rhs);
+	Animal &operator=(const Animal &rhs);
 
 	virtual void makeSound(void) const = 0;
 	const std::string &getType(void) const;

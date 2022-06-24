@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 17:04:43 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:47:17 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,6 @@
 int main()
 {
 	{
-		const Animal *j = new Dog();
-		const Animal *i = new Cat();
-
-		delete j;
-		delete i;
-	}
-	{
-		std::cout << "########################################" << std::endl;
-		std::cout << "###---Test with Base class pointer---###" << std::endl;
-		std::cout << "########################################" << std::endl;
-
 		Animal *animals[NUM_OF_ANIMALS];
 
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
@@ -40,32 +29,13 @@ int main()
 				animals[i] = new Cat();
 			std::cout << animals[i]->getType() << std::endl;
 		}
-
-		animals[0]->setBrainIdea(0, "I'm hungry");
-		animals[2]->setBrainIdea(0, "I'm thirsty");
-		*animals[1] = *animals[0];
-		*animals[3] = *animals[2];
-
-		std::cout << "# Brain memory" << std::endl
-				  << "Dog: " << animals[0]->getBrain() << std::endl
-				  << "Copied dog: " << animals[1]->getBrain() << std::endl
-				  << "Cat: " << animals[2]->getBrain() << std::endl
-				  << "Copied cat: " << animals[3]->getBrain() << std::endl;
-
-		std::cout << "# Ideas" << std::endl
-				  << "Dog: " << animals[0]->getBrainIdea(0) << std::endl
-				  << "Copied dog: " << animals[1]->getBrainIdea(0) << std::endl
-				  << "Cat: " << animals[2]->getBrainIdea(0) << std::endl
-				  << "Copied cat: " << animals[3]->getBrainIdea(0) << std::endl;
 		
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
 			delete animals[i];
 		std::cout << std::endl;
 	}
 	{
-		std::cout << "##########################################" << std::endl;
-		std::cout << "###---Test with Derived class object---###" << std::endl;
-		std::cout << "##########################################" << std::endl;
+		std::cout << "###---Test Deep copy---###" << std::endl;
 
 		Dog d1;
 		Cat c1;
