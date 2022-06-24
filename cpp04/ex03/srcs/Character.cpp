@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:46:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 13:30:37 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 15:42:36 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ Character::Character(const Character &rhs)
 	this->n_of_equip = rhs.n_of_equip;
 
 	for (int i = 0; i < Character::inventory_size; i++)
-	{
-		if (this->inventory[i])
-			delete this->inventory[i];
 		this->inventory[i] = rhs.inventory[i];
-	}
 	// std::cout << "Character copy constructor called" << std::endl;
 }
 
@@ -51,14 +47,17 @@ Character::~Character()
 
 Character &Character::operator=(const Character &rhs)
 {
-	this->name = rhs.name;
-	this->n_of_equip = rhs.n_of_equip;
-
-	for (int i = 0; i < Character::inventory_size; i++)
+	if (this != &rhs)
 	{
-		if (this->inventory[i])
-			delete this->inventory[i];
-		this->inventory[i] = rhs.inventory[i];
+		this->name = rhs.name;
+		this->n_of_equip = rhs.n_of_equip;
+
+		for (int i = 0; i < Character::inventory_size; i++)
+		{
+			if (this->inventory[i])
+				delete this->inventory[i];
+			this->inventory[i] = rhs.inventory[i];
+		}
 	}
 	// std::cout << "Character assignment operator called" << std::endl;
 	return (*this);

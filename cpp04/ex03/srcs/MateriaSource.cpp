@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:13:48 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/14 13:01:39 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 15:42:00 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ MateriaSource::MateriaSource(void)
 MateriaSource::MateriaSource(const MateriaSource &rhs)
 {
 	for (int i = 0; i < MateriaSource::materias_size; i++)
-	{
-		if (this->materias[i])
-			delete this->materias[i];
 		this->materias[i] = rhs.materias[i];
-	}
 	// std::cout << "MateriaSource copy constructor called" << std::endl;
 }
 
@@ -40,11 +36,14 @@ MateriaSource::~MateriaSource(void)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
-	for (int i = 0; i < MateriaSource::materias_size; i++)
+	if (this != &rhs)
 	{
-		if (this->materias[i])
-			delete this->materias[i];
-		this->materias[i] = rhs.materias[i];
+		for (int i = 0; i < MateriaSource::materias_size; i++)
+		{
+			if (this->materias[i])
+				delete this->materias[i];
+			this->materias[i] = rhs.materias[i];
+		}
 	}
 	// std::cout << "MateriaSource assignment operator called" << std::endl;
 	return (*this);
