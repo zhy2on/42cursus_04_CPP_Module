@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/12 17:37:16 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:09:30 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,35 @@ int main()
 		*animals[1] = *animals[0];
 		*animals[3] = *animals[2];
 
-		std::cout << "\033[0;32m"
-				  << "# Brain memory" << std::endl
+		std::cout << "# Brain memory" << std::endl
 				  << "Dog: " << animals[0]->getBrain() << std::endl
 				  << "Copied dog: " << animals[1]->getBrain() << std::endl
 				  << "Cat: " << animals[2]->getBrain() << std::endl
-				  << "Copied cat: " << animals[3]->getBrain() << std::endl
-				  << "\033[0m";
+				  << "Copied cat: " << animals[3]->getBrain() << std::endl;
 
-		std::cout << "\033[0;32m"
-				  << "# Ideas" << std::endl
+		std::cout << "# Ideas" << std::endl
 				  << "Dog: " << animals[0]->getBrainIdea(0) << std::endl
 				  << "Copied dog: " << animals[1]->getBrainIdea(0) << std::endl
 				  << "Cat: " << animals[2]->getBrainIdea(0) << std::endl
-				  << "Copied cat: " << animals[3]->getBrainIdea(0) << std::endl
-				  << "\033[0m";
+				  << "Copied cat: " << animals[3]->getBrainIdea(0) << std::endl;
 		
 		for (int i = 0; i < NUM_OF_ANIMALS; i++)
 			delete animals[i];
+		system("leaks animal01");
+
+		std::cout << "-----------Deep copy Test-----------" << std::endl;
+		Dog d1;
+		Dog d2 = d1;
+		Dog d3;
+		d1.getBrain()->setIdea(0, "idea 99");
+
+		std::cout << std::endl;
+		for (int index = 0; index < 100; index++)
+			std::cout << d1.getBrain()->getIdea(index) << " ";
+		std::cout << std::endl << std::endl;
+		for (int index = 0; index < 100; index++)
+			std::cout << d2.getBrain()->getIdea(index) << " ";
+		std::cout << std::endl << std::endl;
 		system("leaks animal01");
 	}
 	return 0;
