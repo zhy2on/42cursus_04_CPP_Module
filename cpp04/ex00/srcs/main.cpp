@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 20:59:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/12 17:37:40 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:46:23 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,18 @@ int main()
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 
-	std::cout << "\033[0;32m";
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); // will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
-	std::cout << "\033[0m";
 
 	const WrongAnimal *metaWrong = new WrongAnimal();
 	const WrongAnimal *catWrong = new WrongCat();
 
-	std::cout << "\033[0;32m";
 	std::cout << catWrong->getType() << std::endl;
 	catWrong->makeSound();
 	metaWrong->makeSound();
-	std::cout << "\033[0m";
 	// system("leaks animal00");
 	return 0;
 }
