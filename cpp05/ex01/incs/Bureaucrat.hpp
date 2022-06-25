@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:01:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:01:51 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:54:50 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 
 	void incrementGrade(const int n);
 	void decrementGrade(const int n);
-	bool signForm(Form &form) const;
+	void signForm(Form &form) const;
 
 	class GradeTooHighException : public std::exception
 	{

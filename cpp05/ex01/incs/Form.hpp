@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:25:24 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:12:27 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:55:01 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ public:
 	bool getIsSigned(void) const;
 	int getGradeToSign(void) const;
 	int getGradeToExecute(void) const;
-	bool beSigned(const Bureaucrat &rhs);
+	void beSigned(const Bureaucrat &rhs);
 
 	class GradeTooHighException : public std::exception
 	{

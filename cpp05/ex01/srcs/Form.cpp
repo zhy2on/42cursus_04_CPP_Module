@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:26:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:29:06 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:52:12 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,11 @@ int Form::getGradeToExecute(void) const
 	return this->gradeToExecute;
 }
 
-bool Form::beSigned(const Bureaucrat &rhs)
+void Form::beSigned(const Bureaucrat &rhs)
 {
-	if (rhs.getGrade() <= this->gradeToSign)
-		this->isSigned = true;
-	else
-		this->isSigned = false;
-	if (rhs.getGrade() > Form::lowestGrade)
+	if (rhs.getGrade() > this->gradeToExecute)
 		throw Form::GradeTooLowException();
-	return this->isSigned;
+	this->isSigned = true;
 }
 
 void Form::checkGrade(void) const
