@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 17:21:20 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:38:29 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Bureaucrat::Bureaucrat(void)
 	: name(""), grade(Bureaucrat::highestGrade)
 {
-	checkGrade();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, const int grade)
