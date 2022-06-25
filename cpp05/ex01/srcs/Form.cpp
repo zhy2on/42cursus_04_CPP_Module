@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:26:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 17:52:12 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 18:54:40 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,16 @@ void Form::checkGrade(void) const
 		throw Form::GradeTooHighException();
 	else if (this->gradeToSign > Form::lowestGrade || this->gradeToExecute > Form::lowestGrade)
 		throw Form::GradeTooLowException();
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &rhs)
