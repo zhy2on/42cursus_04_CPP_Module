@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:26:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 14:48:58 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 19:02:35 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,11 @@ int Form::getGradeToExecute(void) const
 	return this->gradeToExecute;
 }
 
-bool Form::beSigned(const Bureaucrat &rhs)
+void Form::beSigned(const Bureaucrat &rhs)
 {
-	if (rhs.getGrade() <= this->gradeToSign)
-		this->isSigned = true;
-	else
-		this->isSigned = false;
-	if (rhs.getGrade() > Form::lowestGrade)
+	if (rhs.getGrade() > this->gradeToExecute)
 		throw Form::GradeTooLowException();
-	return this->isSigned;
+	this->isSigned = true;
 }
 
 void Form::checkGrade(void) const
@@ -79,6 +75,21 @@ void Form::checkGrade(void) const
 		throw Form::GradeTooHighException();
 	else if (this->gradeToSign > Form::lowestGrade || this->gradeToExecute > Form::lowestGrade)
 		throw Form::GradeTooLowException();
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
+}
+
+const char *Form::CantExecuteForm::what() const throw()
+{
+	return ("can not execute form");
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &rhs)

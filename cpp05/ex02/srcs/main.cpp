@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 16:53:00 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 18:59:17 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 int main()
 {
 	Form *form;
-	Bureaucrat jihoh = Bureaucrat("jihoh", 1);
-	Bureaucrat bob = Bureaucrat("bob", 150);
+	Bureaucrat mark = Bureaucrat("Mark", 1);
+	Bureaucrat peter = Bureaucrat("Peter", 150);
 
 	try
 	{
 		form = new ShrubberyCreationForm("home");
-		jihoh.signForm(*form);
-		jihoh.executeForm(*form);
+		mark.signForm(*form);
+		mark.executeForm(*form);
 		delete form;
 	}
 	catch(const std::exception& e)
@@ -35,9 +35,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		form = new RobotomyRequestForm("Rocket");
-		jihoh.signForm(*form);
-		jihoh.executeForm(*form);
+		form = new RobotomyRequestForm("Marvin");
+		mark.signForm(*form);
+		mark.executeForm(*form);
 		delete form;
 	}
 	catch(const std::exception& e)
@@ -47,9 +47,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		form = new PresidentialPardonForm("bob");
-		jihoh.signForm(*form);
-		jihoh.executeForm(*form);
+		form = new PresidentialPardonForm("Bob");
+		mark.signForm(*form);
+		mark.executeForm(*form);
 		delete form;
 	}
 	catch(const std::exception& e)
@@ -59,9 +59,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		form = new PresidentialPardonForm("bob");
-		jihoh.signForm(*form);
-		bob.executeForm(*form);
+		form = new PresidentialPardonForm("Bob");
+		mark.signForm(*form);
+		peter.executeForm(*form);
 		delete form;
 	}
 	catch(const std::exception& e)

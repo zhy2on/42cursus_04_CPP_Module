@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:25:24 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 16:50:14 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 19:02:40 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,32 +45,23 @@ public:
 	bool getIsSigned(void) const;
 	int getGradeToSign(void) const;
 	int getGradeToExecute(void) const;
-	bool beSigned(const Bureaucrat &rhs);
+	void beSigned(const Bureaucrat &rhs);
 	virtual void execute(Bureaucrat const &executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char *what() const throw()
-		{
-			return ("Grade is too high");
-		}
+		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char *what() const throw()
-		{
-			return ("Grade is too low");
-		}
+		const char *what() const throw();
 	};
 	class CantExecuteForm : public std::exception
 	{
 	public:
-		const char *what() const throw()
-		{
-			return ("can not execute form");
-		}
+		const char *what() const throw();
 	};
 };
 
