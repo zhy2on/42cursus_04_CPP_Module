@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 17:38:29 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 18:42:04 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,16 @@ void Bureaucrat::checkGrade(void) const
 		throw Bureaucrat::GradeTooHighException();
 	else if (this->grade > Bureaucrat::lowestGrade)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
 }
 
 std::ostream &operator<< (std::ostream &os, const Bureaucrat &rhs)

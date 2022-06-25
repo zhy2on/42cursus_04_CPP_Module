@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 17:16:29 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 18:41:39 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	system("leaks bureaucrat");
+	// system("leaks bureaucrat");
 }
