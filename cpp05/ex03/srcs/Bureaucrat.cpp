@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 16:55:37 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 19:28:53 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,18 @@ void Bureaucrat::checkGrade(void) const
 		throw Bureaucrat::GradeTooLowException();
 }
 
-bool Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(Form &form) const
 {
-	if (form.beSigned(*this))
+	try
 	{
+		form.beSigned(*this);
 		std::cout << this->name << " signed " << form.getName()
 			<< std::endl;
-		return true;
 	}
-	else
+	catch (const std::exception &e)
 	{
 		std::cout << this->name << " couldn't sign " << form.getName()
-			<< " because their grade is not high enough" << std::endl;
-		return false;
+			<< ". Grade is not high enough" << std::endl; 
 	}
 }
 
@@ -92,7 +91,7 @@ void Bureaucrat::executeForm(Form &form) const
 	try
 	{
 		form.execute(*this);
-		std::cout << this->name << " executed " << form.getName() << std::endl;
+		std::cout << this->name << " executed " << form.getName() << " successfully" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -100,8 +99,18 @@ void Bureaucrat::executeForm(Form &form) const
 	}
 }
 
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
+}
+
 std::ostream &operator<< (std::ostream &os, const Bureaucrat &rhs)
 {
-	os << rhs.getName() << ", Bureaucrat grade " << rhs.getGrade();
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return os;
 }

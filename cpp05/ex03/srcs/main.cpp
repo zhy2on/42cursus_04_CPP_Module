@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 17:34:24 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 19:32:14 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,18 @@ int main()
 	Bureaucrat andy("Andy", 10);
 	Form *form = NULL;
 
-	form = intern.makeForm("a file doesn't exist", "some target");
+	form = intern.makeForm("asfasdfsad", "some target");
 	delete(form);
 
 	form = intern.makeForm("presidential pardon", "Peter");
 	delete(form);
 
-	form = intern.makeForm("robotomy request", "Mark");
+	form = intern.makeForm("robotomy request", "Marvin");
 	delete(form);
 
 	form = intern.makeForm("shrubbery creation", "home");
-	{
-		andy.signForm(*form);
-		andy.executeForm(*form);
-	}
+	andy.signForm(*form);
+	andy.executeForm(*form);
 	delete(form);
 
 	// system("leaks intern");
