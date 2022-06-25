@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TypeConversion.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:22:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/20 03:09:38 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 16:06:55 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void TypeConversion::setLiteralType(const char *literal)
 	if (this->literal == 0 && !isdigit(literal[0]) && !literal[1])
 	{
 		this->literalType = TypeConversion::charType;
-		this->literal = static_cast<char>(literal[0]);
+		this->literal = literal[0];
 	}
 	else if (str.find(".") != std::string::npos)
 	{
