@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:29:56 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:40:51 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try
 	{
-		Form f("form", 1, 0);
+		Form f("Form", 1, 0);
 
 		std::cout << f << std::endl;
 	}
@@ -27,8 +27,8 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		Bureaucrat mark = Bureaucrat("mark", 1);
-		Form f("form", 150, 150);
+		Bureaucrat mark = Bureaucrat("Mark", 1);
+		Form f("Form", 150, 150);
 
 		std::cout << mark << std::endl;
 		std::cout << f << std::endl;
@@ -41,8 +41,8 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		Bureaucrat peter = Bureaucrat("peter", 10);
-		Form f("form", 1, 1);
+		Bureaucrat peter = Bureaucrat("Peter", 10);
+		Form f("Form", 1, 1);
 
 		std::cout << peter << std::endl;
 		std::cout << f << std::endl;
