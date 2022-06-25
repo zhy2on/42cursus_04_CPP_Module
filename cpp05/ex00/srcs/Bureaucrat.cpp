@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/17 18:16:15 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 17:21:20 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ void Bureaucrat::checkGrade(void) const
 
 std::ostream &operator<< (std::ostream &os, const Bureaucrat &rhs)
 {
-	os << rhs.getName() << ", Bureaucrat grade " << rhs.getGrade();
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return os;
 }
