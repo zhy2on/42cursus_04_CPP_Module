@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:28:50 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 19:46:18 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:36:27 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,4 @@ void Dog::makeSound(void) const
 Brain *Dog::getBrain(void) const
 {
 	return (this->brain);
-}
-
-const std::string &Dog::getBrainIdea(int idx) const
-{
-	return (this->brain->getIdea(idx));
-}
-
-void Dog::setBrainIdea(int idx, std::string idea)
-{
-	this->brain->setIdea(idx, idea);
 }

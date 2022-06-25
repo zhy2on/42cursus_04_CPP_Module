@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:14:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 19:46:11 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:36:22 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,4 @@ void Cat::makeSound(void) const
 Brain *Cat::getBrain(void) const
 {
 	return (this->brain);
-}
-
-const std::string &Cat::getBrainIdea(int idx) const
-{
-	return (this->brain->getIdea(idx));
-}
-
-void Cat::setBrainIdea(int idx, std::string idea)
-{
-	this->brain->setIdea(idx, idea);
 }

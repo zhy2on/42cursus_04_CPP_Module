@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:32:14 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 19:45:48 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:34:17 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ public:
 
 	virtual void makeSound(void) const;
 	const std::string &getType(void) const;
-	virtual Brain *getBrain(void) const = 0;
-	virtual const std::string &getBrainIdea(int idx) const = 0;
-	virtual void setBrainIdea(int idx, std::string idea) = 0;
 };
 
 #endif

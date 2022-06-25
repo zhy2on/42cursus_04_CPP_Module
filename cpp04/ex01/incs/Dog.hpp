@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:26:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/24 19:45:54 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:36:11 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ public:
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;
-	const std::string &getBrainIdea(int idx) const;
-	void setBrainIdea(int idx, std::string idea);
 };
 
 #endif
