@@ -6,15 +6,13 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:53:17 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/23 17:00:47 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 18:04:18 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "Class.hpp"
 
 Base *generate(void)
 {

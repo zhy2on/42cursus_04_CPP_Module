@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TypeConversion.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:08:31 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/20 03:11:01 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 17:27:16 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ public:
 	class InvalidInputException : public std::exception
 	{
 	public:
-		const char *what() const throw()
-		{
-			return ("Invalid input. Please input numeric or character value.");
-		}
+		const char *what() const throw();
 	};
 };
 

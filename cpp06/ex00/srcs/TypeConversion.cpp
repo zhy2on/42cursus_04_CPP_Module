@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:22:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 16:06:55 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 17:27:13 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,11 @@ void TypeConversion::literalToDobule(void) const
 			std::cout << ".0";
 		std::cout << std::endl;
 	}
+}
+
+const char *TypeConversion::InvalidInputException::what() const throw()
+{
+	return ("Invalid input. Please input numeric or character value.");
 }
 
 const int &TypeConversion::getLiteralType(void) const

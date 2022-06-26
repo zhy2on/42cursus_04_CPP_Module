@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Class.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 15:44:43 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/21 15:46:20 by jihoh            ###   ########.fr       */
+/*   Created: 2022/06/26 18:00:48 by jihoh             #+#    #+#             */
+/*   Updated: 2022/06/26 18:04:07 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_CLASS_H
-# define BASE_CLASS_H
+#ifndef CLASS_CLASS_H
+# define CLASS_CLASS_H
 
 class Base
 {
-private:
-
 public:
 	virtual ~Base(void) {}
 };
+
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
 
 #endif
