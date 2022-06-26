@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:08:44 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/26 15:09:36 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:35:52 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target)
 	: Form::Form("ShrubberyCreationForm", 145, 137), target(target)
+{
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs)
+	: Form::Form(rhs), target(rhs.target)
 {
 }
 

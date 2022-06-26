@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:08:44 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/26 15:08:15 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:35:58 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target)
 	: Form::Form("PresidentialPardonForm", 25, 5), target(target)
+{
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs)
+	: Form::Form(rhs), target(rhs.target)
 {
 }
 
