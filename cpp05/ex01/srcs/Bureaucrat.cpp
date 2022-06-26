@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 18:52:04 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 14:33:06 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void Bureaucrat::signForm(Form &form) const
 	catch (const std::exception &e)
 	{
 		std::cout << this->name << " couldn't sign " << form.getName()
-			<< ". Grade is not high enough" << std::endl; 
+			<< " because grade is not high enough" << std::endl; 
 	}
 }
 
