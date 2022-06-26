@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:01:51 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 19:28:09 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 14:48:00 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ public:
 	void incrementGrade(const int n);
 	void decrementGrade(const int n);
 	void signForm(Form &form) const;
-	void executeForm(Form &form) const;
+	void executeForm(Form const &form);
 
 	class GradeTooHighException : public std::exception
 	{

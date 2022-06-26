@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:26:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 19:27:06 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 14:49:22 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Form::Form(void)
 	: name(""), isSigned(false), gradeToSign(Form::lowestGrade), gradeToExecute(Form::lowestGrade)
 {
-	checkGrade();
 }
 
 Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute)

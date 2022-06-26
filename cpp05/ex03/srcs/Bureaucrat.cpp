@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 19:28:53 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 14:47:55 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void Bureaucrat::signForm(Form &form) const
 	}
 }
 
-void Bureaucrat::executeForm(Form &form) const
+void Bureaucrat::executeForm(Form const &form)
 {
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:57:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/26 14:44:43 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:17:22 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,12 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-	this->grade = rhs.grade;
-	std::cout << "Warning: name can not be copied. Only grade is copied." << std::endl;
-	checkGrade();
+	if (this != &rhs)
+	{
+		this->grade = rhs.grade;
+		std::cout << "Warning: name can not be copied. Only grade is copied." << std::endl;
+		checkGrade();
+	}
 	return *this;
 }
 
@@ -82,7 +85,7 @@ void Bureaucrat::signForm(Form &form) const
 	catch (const std::exception &e)
 	{
 		std::cout << this->name << " couldn't sign " << form.getName()
-			<< ". Grade is not high enough" << std::endl; 
+			<< "because grade is not high enough" << std::endl; 
 	}
 }
 
@@ -91,7 +94,7 @@ void Bureaucrat::executeForm(Form const &form)
 	try
 	{
 		form.execute(*this);
-		std::cout << this->name << " executed " << form.getName() << " successfully" << std::endl;
+		std::cout << this->name << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

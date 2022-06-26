@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:26:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 19:02:35 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:00:09 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ Form::~Form()
 
 Form &Form::operator=(const Form &rhs)
 {
-	this->isSigned = rhs.isSigned;
-	std::cout << "Warning: Only isSigned can be copied." << std::endl;
-	checkGrade();
+	if (this != &rhs)
+	{
+		this->isSigned = rhs.isSigned;
+		std::cout << "Warning: Only isSigned can be copied." << std::endl;
+		checkGrade();
+	}
 	return *this;
 }
 

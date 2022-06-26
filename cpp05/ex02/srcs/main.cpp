@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:18:19 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/25 18:59:17 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:16:54 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,21 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	// system("leaks forms");
+	std::cout << std::endl;
+	try
+	{
+		PresidentialPardonForm a("A");
+		PresidentialPardonForm b(a);
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		mark.signForm(a);
+		b = a;
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		mark.executeForm(b);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

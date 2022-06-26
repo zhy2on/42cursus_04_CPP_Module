@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:08:44 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/19 16:51:09 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/06/26 15:15:03 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,18 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string target)
 {
 }
 
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs)
+	: Form::Form(rhs), target(rhs.target)
+{
+}
+
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
 {
-	this->target = rhs.target;
+	if (this != &rhs)
+	{
+		Form::operator=(rhs);
+		this->target = rhs.target;
+	}
 	return *this;
 }
 
