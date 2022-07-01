@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:22:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/01 16:43:48 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/01 16:59:05 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ TypeConversion::TypeConversion(const TypeConversion &rhs)
 
 TypeConversion &TypeConversion::operator=(const TypeConversion &rhs)
 {
-	this->literalType = rhs.literalType;
-	this->literal = rhs.literal;
+	if (this != &rhs)
+	{
+		this->literalType = rhs.literalType;
+		this->literal = rhs.literal;
+	}
 	return *this;
 }
 
@@ -38,38 +41,13 @@ TypeConversion::~TypeConversion()
 {
 }
 
-void TypeConversion::checkValidInput(const char *literal)
-{
-	int dotCnt = 0;
-	int i;
-
-	if (atof(literal) == std::numeric_limits<double>::infinity() || isnan(atof(literal)))
-		return ;
-	if (!isdigit(literal[0]) && !literal[1])
-		return ;
-	if (literal[0] == '-' && atof(literal) != 0)
-		return ;
-	for (i = 0; literal[i + 1]; i++)
-	{
-		if (literal[i] == '.')
-			dotCnt++;
-		else if (!isdigit(literal[i]))
-			throw TypeConversion::InvalidInputException();
-		if (dotCnt > 1)
-			throw TypeConversion::InvalidInputException();
-	}
-	if (dotCnt > 0 && literal[i] == '.')
-		throw TypeConversion::InvalidInputException();
-	if (!isdigit(literal[i]) && literal[i] != 'f' && literal[i] != '.')
-		throw TypeConversion::InvalidInputException();
-}
-
 void TypeConversion::setLiteralType(const char *literal)
 {
 	const std::string str = literal;
 
-	checkValidInput(literal);
 	this->literal = atof(literal);
+	if (this->literal == 0 && !isdigit(literal[0]) && literal[1])
+		throw TypeConversion::InvalidInputException();
 	if (this->literal == 0 && !isdigit(literal[0]) && !literal[1])
 	{
 		this->literalType = TypeConversion::charType;
@@ -111,15 +89,10 @@ void TypeConversion::literalToInt(void) const
 
 void TypeConversion::literalToFloat(void) const
 {
-	if (this->literal <= std::numeric_limits<float>::max() && this->literal >= std::numeric_limits<float>::min())
-	{
-		std::cout << "float: " << static_cast<float>(this->literal);
-		if (static_cast<int>(this->literal) == this->literal)
-			std::cout << ".0";
-		std::cout << "f" << std::endl;
-	}
-	else
-		std::cout << "float: impossible" << std::endl;
+	std::cout << "float: " << static_cast<float>(this->literal);
+	if (static_cast<int>(this->literal) == this->literal)
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
 }
 
 void TypeConversion::literalToDobule(void) const
@@ -133,9 +106,4 @@ void TypeConversion::literalToDobule(void) const
 const char *TypeConversion::InvalidInputException::what() const throw()
 {
 	return ("Invalid input. Please input numeric or character value.");
-}
-
-const int &TypeConversion::getLiteralType(void) const
-{
-	return (this->literalType);
 }

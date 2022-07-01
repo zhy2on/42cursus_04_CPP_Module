@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:08:31 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/01 16:44:54 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/01 16:58:30 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ private:
 		doubleType = 3
 	};
 
-	void checkValidInput(const char *literal);
 	void setLiteralType(const char *literal);
 
 	TypeConversion(void);
@@ -48,8 +47,6 @@ public:
 	void literalToInt(void) const;
 	void literalToFloat(void) const;
 	void literalToDobule(void) const;
-
-	const int &getLiteralType(void) const;
 
 	class InvalidInputException : public std::exception
 	{
