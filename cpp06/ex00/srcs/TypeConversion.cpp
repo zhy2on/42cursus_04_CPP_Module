@@ -45,6 +45,8 @@ void TypeConversion::checkValidInput(const char *literal)
 
 	if (!isdigit(literal[0]) && !literal[1])
 		return ;
+	if (literal[0] == '-' && atof(literal) != 0)
+		return ;
 	for (i = 0; literal[i + 1]; i++)
 	{
 		if (literal[i] == '.')
@@ -129,7 +131,8 @@ void TypeConversion::literalToChar(void) const
 
 void TypeConversion::literalToInt(void) const
 {
-	if (this->literalType != TypeConversion::nanType && this->literalType != TypeConversion::infType)
+	if (this->literalType != TypeConversion::nanType && this->literalType != TypeConversion::infType
+		&& this->literal <= INT_MAX && this->literal >= INT_MIN)
 		std::cout << "int: " << static_cast<int>(this->literal) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
