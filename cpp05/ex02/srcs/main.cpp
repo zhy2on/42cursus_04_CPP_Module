@@ -69,20 +69,4 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try
-	{
-		PresidentialPardonForm a("A");
-		PresidentialPardonForm b(a);
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		mark.signForm(a);
-		b = a;
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		mark.executeForm(b);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
 }
