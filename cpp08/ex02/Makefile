@@ -6,11 +6,11 @@
 #    By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:21:31 by jihoh             #+#    #+#              #
-#    Updated: 2022/06/22 17:58:47 by jihoh            ###   ########.fr        #
+#    Updated: 2022/07/01 18:23:42 by jihoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp MutantStack.cpp
+SRCS = main.cpp
 SRCS := $(addprefix $(SRC_DIR), $(SRCS))
 OBJS =  $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
