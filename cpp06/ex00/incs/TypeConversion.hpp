@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:08:31 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/26 17:27:16 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/01 16:09:21 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <cctype>
 # include <cstdlib>
+# include <limits>
 
 class TypeConversion
 {
@@ -25,13 +26,10 @@ private:
 	double literal;
 
 	enum {
-		noType = -1,
 		charType = 0,
 		intType = 1,
 		floatType = 2,
-		doubleType = 3,
-		nanType = 4,
-		infType = 5
+		doubleType = 3
 	};
 
 	void checkValidInput(const char *literal);
