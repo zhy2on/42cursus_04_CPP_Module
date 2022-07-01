@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:22:26 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/01 16:10:35 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/01 16:43:48 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void TypeConversion::literalToChar(void) const
 
 void TypeConversion::literalToInt(void) const
 {
-	if (this->literal <= INT_MAX && this->literal >= INT_MIN)
+	if (this->literal <= std::numeric_limits<int>::max() && this->literal >= std::numeric_limits<int>::min())
 		std::cout << "int: " << static_cast<int>(this->literal) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
@@ -111,10 +111,15 @@ void TypeConversion::literalToInt(void) const
 
 void TypeConversion::literalToFloat(void) const
 {
-	std::cout << "float: " << static_cast<float>(this->literal);
-	if (static_cast<int>(this->literal) == this->literal)
-		std::cout << ".0";
-	std::cout << "f" << std::endl;
+	if (this->literal <= std::numeric_limits<float>::max() && this->literal >= std::numeric_limits<float>::min())
+	{
+		std::cout << "float: " << static_cast<float>(this->literal);
+		if (static_cast<int>(this->literal) == this->literal)
+			std::cout << ".0";
+		std::cout << "f" << std::endl;
+	}
+	else
+		std::cout << "float: impossible" << std::endl;
 }
 
 void TypeConversion::literalToDobule(void) const
