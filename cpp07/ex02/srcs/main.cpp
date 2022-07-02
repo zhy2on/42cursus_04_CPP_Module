@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:41:10 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/02 14:45:18 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/02 15:00:50 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,33 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-    for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
         std::cout << numbers[i] << " " << mirror[i] << std::endl;
-    for (int i = 0; i < MAX_VAL; i++)
+	std::cout << std::endl;
+	for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
     }
-    for (int i = 0; i < 3; i++)
-        std::cout << numbers[i] << " " << mirror[i] << std::endl;
+	for (int i = 0; i < 3; i++)
+		std::cout << numbers[i] << " " << mirror[i] << std::endl;
+	std::cout << std::endl;
+	Array<int> numbers2(3);
+	numbers2 = numbers;
+	for (int i = 0; i < 3; i++)
+		std::cout << numbers2[i] << " " << mirror[i] << std::endl;
+	std::cout << std::endl;
     delete [] mirror;//
+
+	Array<int> array;
+	try
+	{
+		std::cout << &array << std::endl;
+		array[0] = 1;
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
     system("leaks array");
     return 0;
 }

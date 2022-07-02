@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:14:05 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/02 14:36:23 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/02 14:59:06 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	unsigned int arraySize;
 
 public:
-	Array(void) : array(NULL), arraySize(0) {}
+	Array(void) : arraySize(0) { this->array = new T[0]; }
 	Array(const unsigned int n) : arraySize(n) { this->array = new T[n]; }
 	Array(const Array &rhs) : arraySize(rhs.arraySize)
 	{
@@ -41,7 +41,7 @@ public:
 			this->arraySize = rhs.arraySize;
 			this->array = new T[rhs.arraySize];
 			for (unsigned int i = 0; i < rhs.arraySize; i++)
-				(*this)[i] = rhs[i];
+				this->array[i] = rhs[i];
 		}
 		return *this;
 	}
