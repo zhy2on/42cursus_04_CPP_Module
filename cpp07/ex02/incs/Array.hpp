@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:14:05 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/21 20:24:38 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/02 14:36:23 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Array
 {
 private:
 	T *array;
-	int arraySize;
+	unsigned int arraySize;
 
 public:
 	Array(void) : array(NULL), arraySize(0) {}
@@ -28,29 +28,31 @@ public:
 	Array(const Array &rhs) : arraySize(rhs.arraySize)
 	{
 		this->array = new T[rhs.arraySize];
-		for (int i = 0; i < rhs.arraySize; i++)
+		for (unsigned int i = 0; i < rhs.arraySize; i++)
 			this->array[i] = rhs.array[i];
 	}
 	~Array(void) { delete[] this->array; }
 
 	Array &operator=(const Array &rhs)
 	{
-		if (this->array)
-			delete[] this->array;
-		this->array = new T[rhs.arraySize];
-		this->arraySize = rhs.arraySize;
-		for (int i = 0; i < rhs.arraySize; i++)
-			this->array[i] = rhs.array[i];
+		if (this != &rhs)
+		{
+			this->~Array();
+			this->arraySize = rhs.arraySize;
+			this->array = new T[rhs.arraySize];
+			for (unsigned int i = 0; i < rhs.arraySize; i++)
+				(*this)[i] = rhs[i];
+		}
 		return *this;
 	}
 	T &operator[](const int idx) const
 	{
-		if (idx >= this->arraySize || idx < 0)
+		if (idx >= static_cast<int>(this->arraySize) || idx < 0)
 			throw std::overflow_error("Index out of bounds");
 		return this->array[idx];
 	}
 
-	int size(void) const { return this->arraySize; }
+	unsigned int size(void) const { return this->arraySize; }
 };
 
 #endif
