@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:07:34 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 17:47:22 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/02 15:57:59 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ public:
 
 	Span &operator=(const Span &rhs);
 
-	int size(void) const;
+	unsigned int size(void) const;
 	void addNumber(int num);
-	int longestSpan(void) const;
-	int shortestSpan(void) const;
+	long longestSpan(void) const;
+	long shortestSpan(void) const;
 	const std::vector<int> &getStorage(void) const;
 	void randomFill(void);
 };

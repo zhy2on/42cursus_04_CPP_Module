@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:18:56 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/22 17:56:38 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/02 16:06:51 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ Span::Span(unsigned int storageSize)
 Span::Span(const Span &rhs)
 	: storageSize(rhs.storageSize)
 {
-	std::vector<int> tmp = rhs.storage;
-	std::vector<int>::iterator it;
-
-	for (it = tmp.begin(); it != tmp.end(); ++it)
-		addNumber(*it);
+	this->storage = rhs.storage;
 	// std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -42,17 +38,16 @@ Span::~Span(void)
 
 Span &Span::operator=(const Span &rhs)
 {
-	this->storage.clear();
-	this->storageSize = rhs.storageSize;
-	std::vector<int>::iterator it;
-	std::vector<int> tmp = rhs.getStorage();
-	for (it = tmp.begin(); it != tmp.end(); ++it)
-		addNumber(*it);
+	if (this != &rhs)
+	{
+		this->storageSize = rhs.storageSize;
+		this->storage = rhs.storage;
+	}
 	return *this;
 	// std::cout << "Assignment operator called" << std::endl;
 }
 
-int Span::size(void) const
+unsigned int Span::size(void) const
 {
 	return (this->storage.end() - this->storage.begin());
 }
@@ -64,7 +59,7 @@ void Span::addNumber(int num)
 	this->storage.push_back(num);
 }
 
-int Span::longestSpan(void) const
+long Span::longestSpan(void) const
 {
 	if (this->storage.size() <= 1)
 		throw std::logic_error("Not enough numbers stored to provide a span");
@@ -74,7 +69,7 @@ int Span::longestSpan(void) const
 	return (*(tmp.end() - 1) - *(tmp.begin()));
 }
 
-int Span::shortestSpan(void) const
+long Span::shortestSpan(void) const
 {
 	if (this->storage.size() <= 1)
 		throw std::logic_error("Not enough numbers stored to provide a span");
