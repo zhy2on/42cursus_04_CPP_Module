@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:18:56 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/02 16:06:51 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 14:28:12 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ long Span::longestSpan(void) const
 	
 	std::vector<int> tmp = this->storage;
 	std::sort(tmp.begin(), tmp.end());
-	return (*(tmp.end() - 1) - *(tmp.begin()));
+	return (tmp.back() - tmp.front());
 }
 
 long Span::shortestSpan(void) const
