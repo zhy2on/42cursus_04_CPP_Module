@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:59:01 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/01 18:24:49 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 17:50:24 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,30 @@
 # define MUTANTSTACK_CLASS_H
 
 # include <stack>
-# include <iostream>
 # include <algorithm>
 
 template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-	MutantStack(void) { return; }
-	MutantStack(const MutantStack &src) { *this = src; }
-	~MutantStack(void) { return; }
-	MutantStack &operator=(const MutantStack &rhs) {
-		(void)rhs;
+	MutantStack(void) : std::stack<T>() {}
+	MutantStack(const MutantStack &src) : std::stack<T>(src) {}
+	~MutantStack(void) {}
+
+	MutantStack &operator=(const MutantStack &rhs)
+	{
+		if (this != &rhs)
+			std::stack<T>::operator=(rhs);
 		return *this;
 	}
+
 	typedef typename std::stack<T>::container_type::iterator iterator;
-	iterator begin(void) { return this->c.begin(); }
-	iterator end(void) { return this->c.end(); }
+	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+
+	iterator begin() { return (std::stack<T>::c.begin()); }
+    const_iterator begin() const { return (std::stack<T>::c.begin()); }
+    iterator end() { return (std::stack<T>::c.end()); }
+    const_iterator end() const { return (std::stack<T>::c.end()); }
 };
 
 #endif
