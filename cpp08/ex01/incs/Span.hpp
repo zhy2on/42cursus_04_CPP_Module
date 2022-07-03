@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:07:34 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/02 15:57:59 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 16:48:02 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ public:
 
 	unsigned int size(void) const;
 	void addNumber(int num);
-	long longestSpan(void) const;
-	long shortestSpan(void) const;
+	unsigned int longestSpan(void) const;
+	unsigned int shortestSpan(void) const;
 	const std::vector<int> &getStorage(void) const;
 	void randomFill(void);
 };

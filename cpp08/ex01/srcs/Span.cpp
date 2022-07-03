@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:18:56 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/03 14:28:12 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 16:49:41 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void Span::addNumber(int num)
 	this->storage.push_back(num);
 }
 
-long Span::longestSpan(void) const
+unsigned int Span::longestSpan(void) const
 {
 	if (this->storage.size() <= 1)
 		throw std::logic_error("Not enough numbers stored to provide a span");
@@ -69,7 +69,7 @@ long Span::longestSpan(void) const
 	return (tmp.back() - tmp.front());
 }
 
-long Span::shortestSpan(void) const
+unsigned int Span::shortestSpan(void) const
 {
 	if (this->storage.size() <= 1)
 		throw std::logic_error("Not enough numbers stored to provide a span");
@@ -77,10 +77,10 @@ long Span::shortestSpan(void) const
 	std::vector<int> tmp = this->storage;
 	std::sort(tmp.begin(), tmp.end());
 	std::vector<int>::iterator it;
-	int min = INT_MAX;
-	for (it = tmp.begin(); it != tmp.end() - 1; ++it)
+	unsigned int min = *(tmp.begin() + 1) - *(tmp.begin());
+	for (it = tmp.begin() + 1; it != tmp.end() - 1; ++it)
 	{
-		if (*(it + 1) - *(it) < min)
+		if (static_cast<unsigned int>(*(it + 1) - *(it)) < min)
 			min = *(it + 1) - *(it);
 	}
 	return  min;

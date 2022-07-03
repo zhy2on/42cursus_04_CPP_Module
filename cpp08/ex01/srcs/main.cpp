@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:27:35 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/03 16:42:26 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 16:51:55 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int main()
 	}
 	{
 		Span sp(5);
-		sp.addNumber(1);
-		sp.addNumber(100000);
+		sp.addNumber(INT_MIN);
+		sp.addNumber(INT_MIN + 1);
+		sp.addNumber(INT_MAX);
 		sp.randomFill();
 		std::vector<int> tmp = sp.getStorage();
 		for (int i = 0; i < 5; i++)
@@ -38,9 +39,9 @@ int main()
 	}
 	{
 		Span sp(10000);
+		std::cout << sp.size() << std::endl;
 		sp.randomFill();
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << sp.size() << std::endl;
 	}
 	{
 		Span sp;
