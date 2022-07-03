@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:45:59 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/23 13:46:32 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 16:04:04 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ int Fixed::toInt( void ) const
 
 bool	Fixed::operator>(const Fixed &fixed) const
 {
-	return (this->toFloat() > fixed.toFloat());
+	return (this->fixed_point_value > fixed.fixed_point_value);
 }
 
 bool	Fixed::operator<(const Fixed &fixed) const
 {
-	return (this->toFloat() < fixed.toFloat());
+	return (this->fixed_point_value < fixed.fixed_point_value);
 }
 
 bool	Fixed::operator>=(const Fixed &fixed) const
@@ -100,7 +100,7 @@ bool	Fixed::operator<=(const Fixed &fixed) const
 
 bool	Fixed::operator==(const Fixed &fixed) const
 {
-	return (this->toFloat() == fixed.toFloat());
+	return (this->fixed_point_value == fixed.fixed_point_value);
 }
 
 bool	Fixed::operator!=(const Fixed &fixed) const
