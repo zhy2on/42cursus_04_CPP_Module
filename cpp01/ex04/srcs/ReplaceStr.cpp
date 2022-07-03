@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ReplaceStr.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:48:32 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/01 17:16:01 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 14:03:06 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ReplaceStr::replaceStr( std::string f, std::string s1, std::string s2 )
 	this->s2 = s2;
 	while (getline(ifs, line))
 	{
-		if ((pos = line.find(this->s1)) != std::string::npos)
+		while ((pos = line.find(this->s1)) != std::string::npos)
 		{
 			line.erase(pos, s1.length());
 			line.insert(pos, this->s2);
