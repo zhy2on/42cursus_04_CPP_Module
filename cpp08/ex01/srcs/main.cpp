@@ -6,7 +6,7 @@
 /*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:27:35 by jihoh             #+#    #+#             */
-/*   Updated: 2022/07/03 16:51:55 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/03 16:58:56 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main()
 		std::cout << sp.size() << std::endl;
 	}
 	{
-		Span sp;
+		Span sp(1);
 		try
 		{
 			std::cout << sp.shortestSpan() << std::endl;
@@ -56,6 +56,9 @@ int main()
 		try
 		{
 			sp.addNumber(1);
+			std::cout << "add 1" << std::endl;
+			sp.addNumber(2);
+			std::cout << "add 2" << std::endl;
 		}
 		catch (const std::exception &e)
 		{
