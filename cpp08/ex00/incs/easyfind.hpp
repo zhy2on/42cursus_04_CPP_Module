@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihoh <jihoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jihoh <jihoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:36:05 by jihoh             #+#    #+#             */
-/*   Updated: 2022/06/21 21:17:37 by jihoh            ###   ########.fr       */
+/*   Updated: 2022/07/04 16:32:05 by jihoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,7 @@
 template <typename T>
 typename T::iterator easyfind(T &container, int goal)
 {
-	typename T::iterator it;
-
-	for (it = container.begin(); it != container.end(); ++it)
-	{
-		if (*it == goal)
-			return it;
-	}
+	typename T::iterator it = std::find(container.begin(), container.end(), goal);
 	return it;
 }
 
