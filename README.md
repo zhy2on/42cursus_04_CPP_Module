@@ -1,2 +1,10 @@
 # 42cursus_04_CPP_Module
-- https://velog.io/@zhy2on/series/cpp
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠00
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠01
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠02
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠03
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠04
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠05
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠06
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠07
+- https://velog.io/@zhy2on/42Seoul-씨쁠쁠08
